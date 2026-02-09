@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "57814058218",
+    "project_id": "first-chatapp1",
+    "storage_bucket": "first-chatapp1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57814058218:android:885759476ee22334920393",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7D5apWa5RImru7K11I1fPK75TifWPw2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57814058218:android:90a6149303f09ab9920393",
+        "android_client_info": {
+          "package_name": "com.example.order_tracking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7D5apWa5RImru7K11I1fPK75TifWPw2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
