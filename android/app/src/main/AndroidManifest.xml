@@ -1,12 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <application
         android:label="order_tracking"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao"/>
+        <!-- Mapbox token is set programmatically in main.dart using MapboxOptions.setAccessToken() -->
+        <!-- This avoids hardcoding the token in version control -->
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

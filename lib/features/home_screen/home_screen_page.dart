@@ -29,6 +29,9 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: .horizontal,
             children: [
               InkWell(
+                onTap: () {
+                  context.push(AppRoutes.myOrdersScreen);
+                },
                 child: Container(
                   height: 50.h,
                   width: 160.w,

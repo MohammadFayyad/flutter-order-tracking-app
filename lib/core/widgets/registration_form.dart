@@ -9,7 +9,7 @@ import 'package:order_tracking/core/styling/app_assets.dart';
 import 'package:order_tracking/core/styling/app_colors.dart';
 import 'package:order_tracking/core/styling/app_styles.dart';
 import 'package:order_tracking/core/widgets/custom_text_field.dart';
-import 'package:order_tracking/core/widgets/primay_button_widget.dart';
+import 'package:order_tracking/core/widgets/primary_button_widget.dart';
 import 'package:order_tracking/core/widgets/spacing_widgets.dart';
 import 'package:order_tracking/features/auth/cubit/auth_cubit.dart';
 

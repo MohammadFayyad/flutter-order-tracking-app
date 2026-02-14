@@ -2,13 +2,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:order_tracking/core/di/dependency_injection.dart';
 import 'package:order_tracking/core/routing/app_routes.dart';
-import 'package:order_tracking/features/add_order_screen/add_order_screen.dart';
-import 'package:order_tracking/features/add_order_screen/place_picker_screen.dart';
+import 'package:order_tracking/features/add_order/add_order_screen.dart';
+import 'package:order_tracking/features/add_order/cubit/order_cubit.dart';
+import 'package:order_tracking/features/add_order/driver_tracking_screen.dart';
+import 'package:order_tracking/features/add_order/models/add_order_model.dart'
+    hide UserModel;
+import 'package:order_tracking/features/add_order/order_track_map_screen.dart';
+import 'package:order_tracking/features/add_order/place_picker_screen.dart';
 import 'package:order_tracking/features/auth/cubit/auth_cubit.dart';
 import 'package:order_tracking/features/auth/login_screen.dart';
 import 'package:order_tracking/features/auth/models/user_model.dart';
 import 'package:order_tracking/features/auth/register_screen.dart';
 import 'package:order_tracking/features/home_screen/home_screen_page.dart';
+import 'package:order_tracking/features/my_orders_screen.dart/my_orders_screen.dart';
 import 'package:order_tracking/features/splash_screen/splash_screen.dart';
 
 class RouterGenerationConfig {
@@ -55,14 +61,38 @@ class RouterGenerationConfig {
         name: AppRoutes.addOrderScreen,
         path: AppRoutes.addOrderScreen,
         builder: (context, state) => BlocProvider(
-          create: (context) => sl<AuthCubit>(),
+          create: (context) => sl<OrderCubit>(),
           child: const AddOrderScreen(),
+        ),
+      ),
+      GoRoute(
+        name: AppRoutes.myOrdersScreen,
+        path: AppRoutes.myOrdersScreen,
+        builder: (context, state) => BlocProvider(
+          create: (context) => sl<OrderCubit>(),
+          child: const MyOrdersScreen(),
         ),
       ),
       GoRoute(
         name: AppRoutes.placePickerScreen,
         path: AppRoutes.placePickerScreen,
         builder: (context, state) => const PlacePickerScreen(),
+      ),
+      GoRoute(
+        name: AppRoutes.orderTrackMapScreen,
+        path: AppRoutes.orderTrackMapScreen,
+        builder: (context, state) {
+          OrderModel order = state.extra as OrderModel;
+          return OrderTrackMapScreen(orderModel: order);
+        },
+      ),
+      GoRoute(
+        name: AppRoutes.driverTrackingScreen,
+        path: AppRoutes.driverTrackingScreen,
+        builder: (context, state) {
+          OrderModel order = state.extra as OrderModel;
+          return DriverTrackingScreen(orderModel: order);
+        },
       ),
     ],
   );

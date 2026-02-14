@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart'
+    show MapboxOptions;
 import 'package:order_tracking/core/di/dependency_injection.dart';
 import 'package:order_tracking/core/routing/router_generation_config.dart';
 import 'package:order_tracking/core/styling/theme_data.dart';
@@ -12,6 +14,7 @@ void main() async {
   await dotenv.load();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   init();
+  MapboxOptions.setAccessToken(dotenv.env['MAPBOX_ACCESS_TOKEN'] ?? "");
   runApp(const MyApp());
 }
 

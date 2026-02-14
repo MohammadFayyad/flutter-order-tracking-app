@@ -18,6 +18,7 @@ class CustomTextField extends StatelessWidget {
     this.obscure = false,
     this.onEditingComplete,
     this.readOnly = false,
+    this.onTap,
   });
 
   final TextEditingController controller;
@@ -32,10 +33,12 @@ class CustomTextField extends StatelessWidget {
   final ValueChanged<String>? onFieldSubmitted;
   final VoidCallback? onEditingComplete;
   final bool readOnly;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: onTap,
       readOnly: readOnly,
       controller: controller,
       validator: validator,

@@ -7,6 +7,8 @@ class AppRoutes {
   static const String homeScreen = '/homeScreen';
   static const String addressScreen = '/addressScreen';
   static const String addOrderScreen = '/addOrderScreen';
-  static const String ordersScreen = '/ordersScreen';
+  static const String myOrdersScreen = '/myOrdersScreen';
   static const String placePickerScreen = '/placePickerScreen';
+  static const String orderTrackMapScreen = '/orderTrackMapScreen';
+  static const String driverTrackingScreen = '/driverTrackingScreen';
 }

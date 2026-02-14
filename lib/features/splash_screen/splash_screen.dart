@@ -27,12 +27,7 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
       duration: const Duration(milliseconds: 1500),
     )..repeat(reverse: true);
-
-    _animation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOut,
-    );
-
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _startApp();
     });
@@ -40,14 +35,8 @@ class _SplashScreenState extends State<SplashScreen>
 
   Future<void> _startApp() async {
     await Future.wait([
-      precacheImage(
-        const AssetImage(AppAssets.order),
-        context,
-      ),
-      precacheImage(
-        const AssetImage(AppAssets.logo),
-        context,
-      ),
+      precacheImage(const AssetImage(AppAssets.order), context),
+      precacheImage(const AssetImage(AppAssets.logo), context),
     ]);
     _timer = Timer(const Duration(seconds: 2), () {
       if (!mounted) return;
